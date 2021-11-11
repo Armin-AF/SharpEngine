@@ -25,8 +25,18 @@ namespace SharpEngine
         public static Vector operator *(Vector v, float f) {
             return new Vector(v.x * f, v.y * f, v.z * f);
         }
+        public static Vector operator +(Vector v, Vector u) {
+            return new Vector(v.x + u.x, v.y + u.y, v.z + u.z);
+        }
+        public static Vector operator -(Vector v, float f) {
+            return new Vector(v.x - f, v.y - f, v.z - f);
+        }
+        public static Vector operator /(Vector v, float f) {
+            return new Vector(v.x / f, v.y / f, v.z / f);
+        }
         
     }
+    
     class Program
     {
        
@@ -40,13 +50,18 @@ namespace SharpEngine
           
         };
         
-        
+
+
+
         static void Main(string[] args) {
             var window = CreateWindow();
+            
 
             LoadTriangleIntoBuffer();
 
             CreateShaderProgram();
+            
+            var direction = new Vector(0.0003f, 0.0003f);
 
             // engine rendering loop
             while (!Glfw.WindowShouldClose(window)) {
@@ -57,12 +72,30 @@ namespace SharpEngine
                 Glfw.SwapBuffers(window);
                 //glFlush();
                 //vertices[4] += 0.001f;
+
                 
-                for (var i = 0; i < vertices.Length; i++)
-                {
-                    vertices[i].x += 0.001f;
+                for (var i = 0; i < vertices.Length; i++) {
+                    vertices[i] += direction;
+                }
+
+                for (var i = 0; i < vertices.Length; i++) {
+                    if (vertices[i].x >= 1 || vertices[i].x <= -1) {
+                        direction.x *= -1;
+                        break;
+                    }
                 }
                 
+                for (var i = 0; i < vertices.Length; i++) {
+                    if (vertices[i].y >= 1 || vertices[i].y <= -1) {
+                        direction.y *= -1;
+                        break;
+                    }
+                }
+                
+
+
+                
+
                 UpdateTriangleBuffer();
             }
         }
