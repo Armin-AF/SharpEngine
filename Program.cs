@@ -5,10 +5,6 @@ using System.Security.Cryptography.X509Certificates;
 using GLFW;
 using static OpenGL.Gl;
 
-using System.IO;
-using System.Runtime.InteropServices;
-using GLFW;
-using static OpenGL.Gl;
 
 namespace SharpEngine
 {
