@@ -34,17 +34,17 @@ namespace SharpEngine {
 		}
 
 		public Vector GetMinBounds() {
-			var min = this.vertices[0].position;
+			var min = this.transform * vertices[0].position;
 			for (var i = 1; i < this.vertices.Length; i++) {
-				min = Vector.Min(min, this.vertices[i].position);
+				min = Vector.Min(min, this.transform*vertices[i].position);
 			}
 			return min;
 		}
             
 		public Vector GetMaxBounds() {
-			var max = this.vertices[0].position;
+			var max = this.transform * vertices[0].position;
 			for (var i = 1; i < this.vertices.Length; i++) {
-				max = Vector.Max(max, this.vertices[i].position);
+				max = Vector.Max(max, this.transform*vertices[i].position);
 			}
 
 			return max;
