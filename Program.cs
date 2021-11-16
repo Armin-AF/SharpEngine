@@ -45,14 +45,16 @@ namespace SharpEngine
                     {
                         walkDirection += shape.Transform.Forward;
                     }
-                    if (window.GetKey(Keys.S)) {
-                        walkDirection += Vector.Backward;
+                    if (window.GetKey(Keys.S))
+                    {
+                        walkDirection += shape.Transform.Backward;
                     }
-                    if (window.GetKey(Keys.A)) {
-                        walkDirection += Vector.Left;
+                    if (window.GetKey(Keys.A))
+                    {
+                        walkDirection += shape.Transform.Left;
                     }
                     if (window.GetKey(Keys.D)) {
-                        walkDirection += Vector.Right;
+                        walkDirection += shape.Transform.Right;
                     }
                     if (window.GetKey(Keys.Q))
                     {
