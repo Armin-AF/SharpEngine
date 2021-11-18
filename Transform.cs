@@ -1,4 +1,3 @@
-
 namespace SharpEngine {
     public class Transform {
         public Vector CurrentScale { get; set; }
