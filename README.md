@@ -27,7 +27,7 @@ SharpEngine is a small game engine written in C#. It provides functionality for 
 ## Installation
 To use SharpEngine, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/SharpEngine.git`
+1. Clone the repository: `git clone https://github.com/Armin-AF/SharpEngine.git`
 2. Set up the required dependencies and libraries as specified in the project files.
 3. Build the project.
 4. Start using the SharpEngine functionality in your own game development projects.
